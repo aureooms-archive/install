@@ -1,0 +1,33 @@
+#!/bin/sh
+
+SHORTCUT="[Desktop Entry]
+Version=1.0
+Name=Sublime Text 2
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Text Editor
+
+Exec=sublime
+Terminal=false
+Icon=/opt/Sublime Text 2/Icon/48x48/sublime_text.png
+Type=Application
+Categories=TextEditor;IDE;Development
+X-Ayatana-Desktop-Shortcuts=NewWindow
+
+[NewWindow Shortcut Group]
+Name=New Window
+Exec=sublime -n
+TargetEnvironment=Unity"
+
+apt-get install curl
+curl -L "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2" -o "/usr/src/Sublime Text 2.tar.bz2"
+cd /usr/src
+tar -xvjf "Sublime Text 2.tar.bz2"
+rm -r "/opt/Sublime Text 2"
+mv "Sublime Text 2" /opt
+rm /usr/bin/sublime
+ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
+
+echo "${SHORTCUT}" > "/usr/share/applications/sublime.desktop"
+ 
+echo "Finish!"
