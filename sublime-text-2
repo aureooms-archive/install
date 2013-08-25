@@ -20,7 +20,16 @@ Exec=sublime -n
 TargetEnvironment=Unity"
 
 apt-get install curl
-curl -L "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2" -o "/usr/src/Sublime Text 2.tar.bz2"
+
+https://github.com/aureooms/install.git
+
+if [ $(`uname -m`) == 'x86_64' ]; then
+	file="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2"
+else
+	file="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.tar.bz2"
+fi
+
+curl -L "${file}" -o "/usr/src/Sublime Text 2.tar.bz2"
 cd /usr/src
 tar -xvjf "Sublime Text 2.tar.bz2"
 rm -r "/opt/Sublime Text 2"
