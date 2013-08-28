@@ -21,8 +21,6 @@ TargetEnvironment=Unity"
 
 apt-get install curl
 
-https://github.com/aureooms/install.git
-
 if [ $(`uname -m`) == 'x86_64' ]; then
 	file="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2"
 else
