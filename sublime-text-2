@@ -9,7 +9,7 @@ GenericName=Text Editor
 
 Exec=sublime
 Terminal=false
-Icon=/opt/Sublime Text 2/Icon/48x48/sublime_text.png
+Icon=/opt/Sublime Text 2/Icon/128x128/sublime_text.png
 Type=Application
 Categories=TextEditor;IDE;Development
 X-Ayatana-Desktop-Shortcuts=NewWindow
@@ -21,7 +21,7 @@ TargetEnvironment=Unity"
 
 apt-get install curl
 
-if [ $(`uname -m`) == 'x86_64' ]; then
+if [ $(uname -m) = "x86_64" ]; then
 	file="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2"
 else
 	file="http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.tar.bz2"
