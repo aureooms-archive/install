@@ -22,4 +22,3 @@ ldconfig
 touch /etc/bash.bashrc
 echo "PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig" >> /etc/bash.bashrc
 echo "export PKG_CONFIG_PATH" >> /etc/bash.bashrc
-
