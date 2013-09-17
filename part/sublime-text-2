@@ -36,5 +36,7 @@ rm /usr/bin/sublime
 ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
 
 echo "${SHORTCUT}" > "/usr/share/applications/sublime.desktop"
+
+sed -i 's/gedit.desktop/sublime.desktop/g' /usr/share/applications/defaults.list
  
 echo "Finish!"
