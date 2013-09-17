@@ -1,5 +1,8 @@
 #!/bin/sh
 
-add-apt-repository ppa:texlive-backports/ppa
-apt-get update
+if [ $(lsb_release -is) = "Ubuntu" ] && [ $(lsb_release -rs) \< "13.04" ]; then
+	add-apt-repository ppa:texlive-backports/ppa;
+	apt-get update;
+fi
+
 apt-get install texlive*
