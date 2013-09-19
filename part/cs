@@ -1,3 +1,4 @@
 #!/bin/sh
 
 apt-get install haskell-platform || apt-get install ghc
+apt-get install gprolog
