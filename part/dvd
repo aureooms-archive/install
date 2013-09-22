@@ -1,0 +1,5 @@
+#!/bin/sh
+
+apt-get install ubuntu-restricted-extras
+sh /usr/share/doc/libdvdread4/install-css.sh
+apt-get install dvdrip
