@@ -1,0 +1,4 @@
+#!/bin/sh
+
+add-apt-repository ppa:pmjdebruijn/darktable-release-plus
+apt-get install darktable
