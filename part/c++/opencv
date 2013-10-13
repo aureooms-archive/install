@@ -4,11 +4,6 @@ apt-get upgrade
 apt-get install libopencv-dev build-essential checkinstall cmake pkg-config yasm libtiff4-dev libjpeg-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libgtk2.0-dev libjasper-dev libopenexr-dev python-dev python-numpy python-tk libtbb-dev libeigen2-dev libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev libqt4-dev libqt4-opengl-dev sphinx-common texlive-latex-extra libv4l-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev ffmpeg lame x264 v4l-utils
 add-apt-repository ppa:ubuntu-toolchain-r/test
 apt-get update
-apt-get install gcc-4.7 g++-4.7
-update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6
-update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.7
-update-alternatives --config gcc
-update-alternatives --config gcc
 tar -xvf OpenCV-2.4.1.tar.bz2
 cd OpenCV-2.4.1/
 mkdir build
