@@ -9,7 +9,7 @@ class CommandBuilder:
 		self.dir = dir + '/'
 			
 	def parse(self, output):
-		pipe = os.popen('ls -1 "' + self.dir + '"')
+		pipe = subprocess.call(['ls', '-1', '"' + self.dir + '"'])
 		scripts = pipe.read()
 		pipe.close()
 		scripts = scripts.strip()
