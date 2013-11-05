@@ -1,3 +1,4 @@
 #!/bin/sh
 
 apt-get install apache2 php5 mysql-server mysql-client phpmyadmin php5-imagick filezilla
+apt-get install php5-intl
