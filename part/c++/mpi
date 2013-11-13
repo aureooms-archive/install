@@ -1,0 +1,3 @@
+#!/bin/sh
+
+apt-get install mpi-default* mpi-doc mpi-specs
