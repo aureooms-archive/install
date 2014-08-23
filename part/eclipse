@@ -1,0 +1,37 @@
+#!/bin/sh
+
+SHORTCUT="[Desktop Entry]
+Name=Eclipse 
+Type=Application
+Exec=eclipse
+Terminal=false
+Icon=eclipse
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse"
+
+apt-get install curl
+
+if [ $(uname -m) = "x86_64" ]; then
+	file="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-java-luna-R-linux-gtk-x86_64.tar.gz"
+else
+	file="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-java-luna-R-linux-gtk.tar.gz"
+fi
+
+curl -L "${file}" -o "/usr/src/eclipse.tar.gz"
+cd /usr/src
+tar -zxvf "eclipse.tar.gz"
+rm -rf "/opt/eclipse"
+mv "eclipse" /opt
+
+echo "${SHORTCUT}" > "/usr/share/applications/eclipse.desktop"
+chmod +x /usr/share/applications/eclipse.desktop
+desktop-file-install /usr/share/applications/eclipse.desktop
+
+rm /usr/local/bin/eclipse
+ln -s /opt/eclipse/eclipse /usr/local/bin/sublime
+
+cp /opt/eclipse/icon.xpm /usr/share/pixmaps/eclipse.xpm
+ 
+echo "Finish!"
