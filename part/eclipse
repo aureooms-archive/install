@@ -14,9 +14,9 @@ Name[en]=Eclipse"
 apt-get install curl
 
 if [ $(uname -m) = "x86_64" ]; then
-	file="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-java-luna-R-linux-gtk-x86_64.tar.gz"
+	file="http://mirror.switch.ch/eclipse/technology/epp/downloads/release/luna/R/eclipse-java-luna-R-linux-gtk-x86_64.tar.gz"
 else
-	file="https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/luna/R/eclipse-java-luna-R-linux-gtk.tar.gz"
+	file="http://mirror.switch.ch/eclipse/technology/epp/downloads/release/luna/R/eclipse-java-luna-R-linux-gtk.tar.gz"
 fi
 
 curl -L "${file}" -o "/usr/src/eclipse.tar.gz"
