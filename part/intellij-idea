@@ -1,0 +1,38 @@
+#!/bin/sh
+
+SHORTCUT="[Desktop Entry]
+Name=IntelliJ IDEA
+Type=Application
+Exec=intellij-idea
+Terminal=false
+Icon=intellij-idea
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=IntelliJ IDEA"
+
+apt-get install curl
+
+if [ $(uname -m) = "x86_64" ]; then
+	file="http://download-cf.jetbrains.com/idea/ideaIC-13.1.3.tar.gz"
+else
+	file="http://download-cf.jetbrains.com/idea/ideaIC-13.1.3.tar.gz"
+fi
+
+curl -L "${file}" -o "/usr/src/intellij-idea.tar.gz"
+cd /usr/src
+tar -xvf "intellij-idea.tar.gz"
+rm -rf "/opt/intellij-idea"
+mv "idea-IC-135.909" "intellij-idea"
+mv "intellij-idea" /opt
+
+echo "${SHORTCUT}" > "/usr/share/applications/intellij-idea.desktop"
+chmod +x /usr/share/applications/intellij-idea.desktop
+desktop-file-install /usr/share/applications/intellij-idea.desktop
+
+rm -f /usr/local/bin/intellij-idea
+ln -s /opt/intellij-idea/bin/idea.sh /usr/local/bin/intellij-idea
+
+cp /opt/intellij-idea/bin/idea.png /usr/share/pixmaps/intellij-idea.png
+ 
+echo "Finish!"
