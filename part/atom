@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl https://github.com/atom/atom/releases/download/v0.141.0/atom-amd64.deb
+dpkg --install atom-amd64.deb
